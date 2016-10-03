@@ -31,9 +31,11 @@ int MS1_pin = 27;
 int MS3_pin = 25;
 int MS2_pin = 26;
 int switch_pin = 42; 
+
 // defines pins
    
-char rcvmsg[10]; // creates a reciever array
+char rcvmsg[10]; 
+// creates a reciever array
   
 /*******************************************************
  * Loop through the drivers to initialize the pins
@@ -41,6 +43,7 @@ char rcvmsg[10]; // creates a reciever array
  *******************************************************/
 void initialize()
 {
+   // intializing the pins (input/output vs high/low) 
     pinMode(sleep_pin, OUTPUT);
     pinMode(dir_pin, OUTPUT);
     pinMode(reset_pin,OUTPUT);
@@ -57,7 +60,8 @@ void initialize()
     digitalWrite(MS3_pin,LOW);
     digitalWrite(MS2_pin,LOW);
     digitalWrite(enable_pin, LOW);
-    //Delay 50 microsecond
+    
+   //Delay 50 microsecond
     delay(50);
     Serial.setTimeout(200);
 }
