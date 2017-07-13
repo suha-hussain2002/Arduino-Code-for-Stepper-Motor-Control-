@@ -1,12 +1,12 @@
-/**************************************************************************************************************
- * Libraries
- **************************************************************************************************************/
+//DEPENDENCIES
+
 #include <LiquidCrystal.h>
 //Libraries for the ID Chips
 #include <Usb.h>
-/**************************************************************************************************************
- * Definitions
- **************************************************************************************************************/
+
+//DEFINITIONS
+//
+
 //Define Motor Specs
 #define MOTOR_SPEED .05 //0.05 max // speed is any number from .01 -> 0.1 with 1 being fastest; Slower is stronger 
 #define NEMA23 -1    //degrees per step 0.9
@@ -16,12 +16,7 @@
 #define CLOCKWISE_CMD 0X43 //C
 #define COUNTERCLOCKWISE_CMD 0X52 //R
 
-/**************************************************************************************************************
- * TXC Pin Mapping 
- **************************************************************************************************************/
-
-//Stepper Controllers
-
+// Pin Mapping 
 int sleep_pin= 29;
 int step_pin = 23;
 int dir_pin = 22;
@@ -31,16 +26,11 @@ int MS1_pin = 27;
 int MS3_pin = 25;
 int MS2_pin = 26;
 int switch_pin = 42; 
-
-// defines pins
-   
-char rcvmsg[10]; 
 // creates a reciever array
-  
-/*******************************************************
- * Loop through the drivers to initialize the pins
- * and set to sleep
- *******************************************************/
+char rcvmsg[10]; 
+
+//INITIALIZATION
+//Loop through the drivers to initialize the pins and set to sleep
 void initialize()
 {
    // intializing the pins (input/output vs high/low) 
@@ -65,9 +55,7 @@ void initialize()
     delay(50);
     Serial.setTimeout(200);
 }
-/***********************************************************************************************************
- * Initialization
- ***********************************************************************************************************/
+
 void setup()  
 {
   Serial.begin(9600);  
@@ -75,10 +63,7 @@ void setup()
   initialize();
 }
 
-/************************************************************************************************************
- * Main Loop
- *   
- *************************************************************************************************************/
+//MAIN LOOP
 void loop() 
 {
    boolean x;
