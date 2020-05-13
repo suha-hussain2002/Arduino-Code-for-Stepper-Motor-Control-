@@ -1,4 +1,3 @@
 # Arduino-Code-for-Stepper-Motor-Control-
-Arduino Code for Stepper Motor Control 
-Arduino + Stepper Driver + Stepper Motor
-EAGLE FILES COMING SOON 
+
+This is a component of a conveyer belt I built at Vengo Labs
